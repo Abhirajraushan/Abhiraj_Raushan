@@ -1303,6 +1303,277 @@ main {
   }
 }
 
+@media (max-width: 640px) {
+  .site-shell {
+    width: min(100vw - 14px, 100%);
+    padding-top: 8px;
+  }
+
+  .hud {
+    gap: 14px;
+    margin-bottom: 18px;
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .brand {
+    gap: 12px;
+  }
+
+  .brand-badge {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+  }
+
+  .brand-copy strong {
+    font-size: 0.92rem;
+  }
+
+  .brand-copy span,
+  .hud-status {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+  }
+
+  .main-nav {
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .main-nav a {
+    font-size: 0.8rem;
+  }
+
+  .hero,
+  .profile-card,
+  .contact-panel,
+  .manifesto-card,
+  .signal-card,
+  .timeline-panel,
+  .mini-panel,
+  .project-card,
+  .skill-board-card,
+  .value-card {
+    padding: 18px;
+    border-radius: 24px;
+  }
+
+  .section-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+  }
+
+  .hero h1 {
+    max-width: 9ch;
+    font-size: clamp(2.3rem, 14vw, 4rem);
+    line-height: 0.94;
+  }
+
+  .hero-text,
+  .profile-meta p,
+  .manifesto-card p,
+  .timeline-body p,
+  .contact-copy p,
+  .plain-list li,
+  .value-card p {
+    font-size: 0.94rem;
+    line-height: 1.68;
+  }
+
+  .hero-console {
+    margin-top: 18px;
+    border-radius: 18px;
+  }
+
+  .console-bar,
+  .console-lines {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .console-lines p {
+    font-size: 0.84rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primary-button,
+  .ghost-button {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .hero-band {
+    gap: 8px;
+  }
+
+  .hero-band span,
+  .tech-row span {
+    min-height: 30px;
+    padding: 0 10px;
+    font-size: 0.74rem;
+  }
+
+  .stat-card {
+    padding: 14px;
+  }
+
+  .counter {
+    font-size: 1.72rem;
+  }
+
+  .hero-stage {
+    min-height: 470px;
+    border-radius: 22px;
+  }
+
+  .hero-photo {
+    inset: 16px 16px 178px 16px;
+    border-radius: 20px;
+  }
+
+  .photo-frame {
+    inset: 10px;
+    border-radius: 16px;
+  }
+
+  .floating-panel {
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .floating-panel h2 {
+    font-size: 1.08rem;
+  }
+
+  .floating-panel ul {
+    font-size: 0.88rem;
+  }
+
+  .floating-chip {
+    min-height: 34px;
+    padding: 0 12px;
+    font-size: 0.74rem;
+  }
+
+  .chip-two {
+    left: 14px;
+    bottom: 142px;
+  }
+
+  .profile-image-wrap {
+    width: 140px;
+    height: 172px;
+  }
+
+  .profile-meta h2,
+  .manifesto-card h2,
+  .project-card h3,
+  .value-card h3 {
+    font-size: 1.55rem;
+  }
+
+  .section-heading {
+    gap: 12px;
+    padding: 2px 2px 10px;
+  }
+
+  .section-heading h2,
+  .contact-copy h2 {
+    max-width: 100%;
+    font-size: clamp(1.55rem, 8vw, 2.2rem);
+  }
+
+  .timeline-entry {
+    gap: 10px;
+    padding-bottom: 16px;
+  }
+
+  .timeline-year,
+  .timeline-role,
+  .project-badge {
+    font-size: 0.72rem;
+  }
+
+  .project-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .skill-board {
+    min-height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 72px 10px 10px;
+    border-radius: 22px;
+  }
+
+  .skill-board::before,
+  .skill-board::after,
+  .skill-core::before,
+  .skill-core::after,
+  .skill-node::before {
+    display: none;
+  }
+
+  .skill-core {
+    top: 16px;
+    left: 16px;
+    width: calc(100% - 32px);
+    height: 42px;
+    border-radius: 14px;
+    transform: none;
+    grid-template-columns: auto auto;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    padding: 0 12px;
+  }
+
+  .skill-core span,
+  .skill-core strong {
+    font-size: 0.78rem;
+  }
+
+  .skill-node {
+    position: relative;
+    min-width: 0;
+    min-height: 72px;
+    inset: auto;
+    width: 100%;
+    transform: none !important;
+  }
+
+  .skill-name {
+    font-size: 0.82rem;
+  }
+
+  .skill-meta {
+    font-size: 0.64rem;
+  }
+
+  .contact-grid a {
+    padding: 14px 16px;
+    border-radius: 18px;
+  }
+
+  .contact-grid strong {
+    font-size: 0.94rem;
+    word-break: break-word;
+  }
+
+  .footer {
+    font-size: 0.76rem;
+    gap: 8px;
+    padding-top: 18px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
