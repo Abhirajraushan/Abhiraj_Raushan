@@ -11,6 +11,12 @@ const yearNode = document.getElementById("year");
 const canvas = document.querySelector(".starfield");
 const interactiveNodes = document.querySelectorAll("a, button");
 const skillNodes = document.querySelectorAll(".skill-node");
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let autoTourStarted = false;
+let autoTourFrame = 0;
+let autoTourTimeout = 0;
+let autoTourLastTime = 0;
+let autoTourDirection = 1;
 
 if (yearNode) {
   yearNode.textContent = new Date().getFullYear();
@@ -27,6 +33,30 @@ const handleProgress = () => {
 
 window.addEventListener("scroll", handleProgress, { passive: true });
 handleProgress();
+
+const clearAutoTourMotion = () => {
+  if (autoTourFrame) {
+    cancelAnimationFrame(autoTourFrame);
+    autoTourFrame = 0;
+  }
+
+  if (autoTourTimeout) {
+    window.clearTimeout(autoTourTimeout);
+    autoTourTimeout = 0;
+  }
+
+  autoTourLastTime = 0;
+};
+
+["wheel", "touchstart", "keydown", "mousedown"].forEach((eventName) => {
+  window.addEventListener(
+    eventName,
+    () => {
+      pauseAutoTour(5000);
+    },
+    { passive: true }
+  );
+});
 
 const revealObserver = new IntersectionObserver(
   (entries, observer) => {
@@ -268,3 +298,83 @@ const initStarfield = () => {
 };
 
 initStarfield();
+
+const scrollRoot = document.scrollingElement || document.documentElement;
+const resumeAutoTour = () => {
+  if (reducedMotion || autoTourFrame) {
+    return;
+  }
+
+  const maxScroll = Math.max(0, scrollRoot.scrollHeight - window.innerHeight);
+
+  if (maxScroll <= 24) {
+    return;
+  }
+
+  const downSpeed = touchDevice ? 80 : 100;
+  const upSpeed = touchDevice ? 88 : 110;
+
+  const step = (now) => {
+    if (!autoTourLastTime) {
+      autoTourLastTime = now;
+    }
+
+    const elapsed = (now - autoTourLastTime) / 1000;
+    autoTourLastTime = now;
+
+    const currentMaxScroll = Math.max(0, scrollRoot.scrollHeight - window.innerHeight);
+    const speed = autoTourDirection === 1 ? downSpeed : upSpeed;
+    const nextY = scrollRoot.scrollTop + (speed * elapsed * autoTourDirection);
+
+    if (autoTourDirection === 1 && nextY >= currentMaxScroll) {
+      scrollRoot.scrollTop = currentMaxScroll;
+      clearAutoTourMotion();
+      autoTourDirection = -1;
+      autoTourTimeout = window.setTimeout(resumeAutoTour, 10000);
+      return;
+    }
+
+    if (autoTourDirection === -1 && nextY <= 0) {
+      scrollRoot.scrollTop = 0;
+      clearAutoTourMotion();
+      autoTourDirection = 1;
+      autoTourTimeout = window.setTimeout(resumeAutoTour, 1400);
+      return;
+    }
+
+    scrollRoot.scrollTop = nextY;
+    autoTourFrame = requestAnimationFrame(step);
+  };
+
+  autoTourFrame = requestAnimationFrame(step);
+};
+
+function pauseAutoTour(delay = 5000) {
+  clearAutoTourMotion();
+
+  if (reducedMotion) {
+    return;
+  }
+
+  autoTourTimeout = window.setTimeout(resumeAutoTour, delay);
+}
+
+const runAutoTour = () => {
+  if (autoTourStarted || reducedMotion) {
+    return;
+  }
+
+  autoTourStarted = true;
+  autoTourDirection = scrollRoot.scrollTop >= (Math.max(0, scrollRoot.scrollHeight - window.innerHeight) - 24) ? -1 : 1;
+  resumeAutoTour();
+};
+
+const scheduleAutoTour = () => {
+  autoTourTimeout = window.setTimeout(runAutoTour, 180);
+};
+
+if (document.readyState === "complete") {
+  scheduleAutoTour();
+} else {
+  window.addEventListener("load", scheduleAutoTour, { once: true });
+}
