@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Abhiraj Raushan - software developer building cyber range systems, AI security products, and full-stack applications.">
+  <title>Abhiraj Raushan | Software Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas class="starfield" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="spotlight" aria-hidden="true"></div>
+  <div class="cursor cursor-ring" aria-hidden="true"></div>
+  <div class="cursor cursor-dot" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <div class="site-shell">
+    <header class="hud">
+      <a class="brand" href="#home" aria-label="Go to home">
+        <span class="brand-badge">AR</span>
+        <span class="brand-copy">
+          <strong>ABHIRAJ RAUSHAN</strong>
+          <span>SOFTWARE DEVELOPER</span>
+        </span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="hud-status">
+        <span class="status-light"></span>
+        <span>OPEN TO SOFTWARE ROLES</span>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero panel reveal">
+        <div class="hero-copy">
+          <p class="section-tag">SOFTWARE ENGINEER - AI SECURITY - CYBER RANGE</p>
+          <h1>
+            Code with fire.
+            <span class="accent">Build with discipline.</span>
+            Ship with hacker focus.
+          </h1>
+          <p class="hero-text">
+            I am Abhiraj Raushan, a software developer at IIT Bhubaneswar working on cyber range platforms for critical infrastructure and industrial control systems. I enjoy building solid backend systems, sharp interfaces, and products that feel fast and clear.
+          </p>
+
+          <div class="hero-console">
+            <div class="console-bar">
+              <span>runtime.log</span>
+              <span class="console-state">streaming</span>
+            </div>
+            <div class="console-lines">
+              <p><span>&gt;</span> role: Software Developer / Project Associate</p>
+              <p><span>&gt;</span> base: IIT Bhubaneswar</p>
+              <p><span>&gt;</span> focus: cyber range, SCADA / OT, backend systems</p>
+              <p><span>&gt;</span> style: calm execution, clean delivery, strong product sense</p>
+              <p class="type-line"><span>&gt;</span> status: <strong id="type-target">building reliable software</strong></p>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="primary-button" href="mailto:abhirajraushan94@gmail.com">Hire Me</a>
+            <a class="ghost-button" href="https://www.linkedin.com/in/abhiraj-raushan/" target="_blank" rel="noreferrer">View LinkedIn</a>
+          </div>
+
+          <div class="stat-strip">
+            <article class="stat-card" data-count="700">
+              <strong class="counter">0</strong>
+              <span>problems solved</span>
+            </article>
+            <article class="stat-card" data-count="95">
+              <strong class="counter">0</strong>
+              <span>threat detection accuracy</span>
+            </article>
+            <article class="stat-card" data-count="5">
+              <strong class="counter">0</strong>
+              <span>Top 5 hackathon finish</span>
+            </article>
+          </div>
+
+          <div class="hero-band">
+            <span>Python</span>
+            <span>Cyber Range</span>
+            <span>SCADA / OT</span>
+            <span>Spring Boot</span>
+            <span>ReactJS</span>
+            <span>AWS</span>
+          </div>
+        </div>
+
+        <div class="hero-stage">
+          <div class="hero-photo stage-layer" data-parallax="18">
+            <img src="Mypic_2.jpeg" alt="Abhiraj Raushan standing on a mountain view">
+            <div class="photo-frame"></div>
+          </div>
+
+          <div class="floating-panel stage-layer" data-parallax="-16">
+            <p class="mini-label">CURRENT MISSION</p>
+            <h2>Building cyber training environments for realistic, hands-on security practice.</h2>
+            <ul>
+              <li>Backend services for scenario flow and monitoring</li>
+              <li>SCADA and OT concepts for realistic simulations</li>
+              <li>Dashboard systems for visibility and control</li>
+            </ul>
+          </div>
+
+          <div class="floating-chip chip-two stage-layer" data-parallax="-22">SPRING BOOT</div>
+        </div>
+      </section>
+
+      <section class="identity-grid reveal" id="about">
+        <article class="panel profile-card">
+          <div class="profile-image-wrap">
+            <img src="mypic_1.jpeg" alt="Portrait of Abhiraj Raushan">
+          </div>
+          <div class="profile-meta">
+            <p class="section-tag">PROFILE</p>
+            <h2>Sharp code. Clean aesthetics. Serious intent.</h2>
+            <p>
+              My work sits between backend engineering, cybersecurity, and product experience. I like building software that is practical under the hood and strong on presentation.
+            </p>
+          </div>
+        </article>
+
+        <article class="panel manifesto-card">
+          <p class="section-tag">APPROACH</p>
+          <h2>I like work that looks sharp and runs clean.</h2>
+          <p>
+            I care about both sides of the job: solid engineering and strong presentation. The best products feel fast, focused, and well-made from the first second.
+          </p>
+          <blockquote>
+            "Good software should feel clear, fast, and confident."
+          </blockquote>
+        </article>
+
+        <article class="panel signal-card">
+          <p class="section-tag">SIGNAL BOARD</p>
+          <div class="signal-list">
+            <div>
+              <span>Education</span>
+              <strong>B.E. in CSE, Chandigarh University</strong>
+            </div>
+            <div>
+              <span>CGPA</span>
+              <strong>7.88</strong>
+            </div>
+            <div>
+              <span>Location</span>
+              <strong>Patna, India</strong>
+            </div>
+            <div>
+              <span>Mode</span>
+              <strong>Software + Cybersecurity + Full Stack</strong>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="section-block reveal" id="experience">
+        <div class="section-heading">
+          <p class="section-tag">EXPERIENCE ARCHIVE</p>
+          <h2>Experience built through systems work, hands-on delivery, and steady learning.</h2>
+        </div>
+
+        <div class="experience-grid">
+          <article class="panel timeline-panel">
+            <div class="timeline-entry">
+              <div class="timeline-year">2025 - NOW</div>
+              <div class="timeline-body">
+                <h3>IIT Bhubaneswar</h3>
+                <p class="timeline-role">Software Developer / Project Associate</p>
+                <p>Developing a cyber range platform for training in critical infrastructure and industrial control systems. Working across backend services, scenario management, data flow, system monitoring, and operational realism.</p>
+              </div>
+            </div>
+
+            <div class="timeline-entry">
+              <div class="timeline-year">2025</div>
+              <div class="timeline-body">
+                <h3>Land Ports Authority of India</h3>
+                <p class="timeline-role">Technical Intern - IT Support and QA Assistance</p>
+                <p>Assisted with internal government web portals, functional reviews, documentation support, and routine IT coordination work.</p>
+              </div>
+            </div>
+
+            <div class="timeline-entry">
+              <div class="timeline-year">2024 - 2025</div>
+              <div class="timeline-body">
+                <h3>Impresiot Marketing and Lifestyle Pvt. Ltd.</h3>
+                <p class="timeline-role">Software Engineer Intern</p>
+                <p>Built REST APIs with Spring Boot, designed MySQL schemas, contributed to React dashboards, and supported AWS deployment, debugging, and testing.</p>
+              </div>
+            </div>
+          </article>
+
+          <div class="side-stack">
+            <article class="panel mini-panel">
+              <p class="section-tag">COMPETITIVE EDGE</p>
+              <ul class="plain-list">
+                <li>700+ coding problems solved</li>
+                <li>Global Rank 1485 on Unstop</li>
+                <li>96.18 percentile in Naukri Young Turks</li>
+              </ul>
+            </article>
+
+            <article class="panel mini-panel">
+              <p class="section-tag">HACKATHON SIGNAL</p>
+              <ul class="plain-list">
+                <li>BlockDAG Hackathon 2025 shortlisted</li>
+                <li>Thales GenTech Hackathon Top 5 finalist</li>
+                <li>Cash prize winner for cybersecurity build</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block reveal" id="projects">
+        <div class="section-heading">
+          <p class="section-tag">PROJECT ARSENAL</p>
+          <h2>Projects that show how I build, learn, and solve real technical problems.</h2>
+        </div>
+
+        <div class="project-layout">
+          <article class="panel project-card large-card">
+            <div class="project-header">
+              <p class="section-tag">PROJECT 01</p>
+              <span class="project-badge">AI SECURITY</span>
+            </div>
+            <h3>Adaptive Cyber Defense Using Generative AI</h3>
+            <p>
+              A real-time cybersecurity platform designed for threat detection and phishing prevention with live visibility and faster response workflows.
+            </p>
+            <ul class="plain-list">
+              <li>LSTM and Random Forest models reached 95% accuracy on CIC IDS 2017.</li>
+              <li>Flask dashboard and SQLite storage powered real-time threat visibility.</li>
+              <li>System design reduced response time by 40 percent.</li>
+            </ul>
+            <div class="tech-row">
+              <span>Python</span>
+              <span>Flask</span>
+              <span>SQLite</span>
+              <span>Machine Learning</span>
+            </div>
+          </article>
+
+          <article class="panel project-card">
+            <div class="project-header">
+              <p class="section-tag">PROJECT 02</p>
+              <span class="project-badge">WEB3 AGENTS</span>
+            </div>
+            <h3>AutonomixAI</h3>
+            <p>
+              A decentralized swarm of AI agents for negotiation, identity, and real-time economic transactions on Ethereum.
+            </p>
+            <ul class="plain-list">
+              <li>Wallets, DID, contracts, payments, and peer discovery.</li>
+              <li>Handled 100+ simulated autonomous transactions.</li>
+              <li>Built with Python, Solidity, and React.</li>
+            </ul>
+            <div class="tech-row">
+              <span>Python</span>
+              <span>Solidity</span>
+              <span>React</span>
+              <span>Ethereum</span>
+            </div>
+          </article>
+
+          <article class="panel skill-board-card">
+            <div class="project-header">
+              <p class="section-tag">SKILL ARENA</p>
+              <span class="project-badge">HOVER OR TAP</span>
+            </div>
+            <div class="skill-board">
+              <div class="skill-core">
+                <span>ABHIRAJ</span>
+                <strong>STACK CORE</strong>
+              </div>
+
+              <button class="skill-node node-1" type="button" data-tilt-intensity="12">
+                <span class="skill-name">Python</span>
+                <span class="skill-meta">AI + Backend</span>
+              </button>
+              <button class="skill-node node-2" type="button" data-tilt-intensity="14">
+                <span class="skill-name">Spring Boot</span>
+                <span class="skill-meta">API Systems</span>
+              </button>
+              <button class="skill-node node-3" type="button" data-tilt-intensity="10">
+                <span class="skill-name">ReactJS</span>
+                <span class="skill-meta">Frontend UI</span>
+              </button>
+              <button class="skill-node node-4" type="button" data-tilt-intensity="11">
+                <span class="skill-name">Cyber Range</span>
+                <span class="skill-meta">Simulation</span>
+              </button>
+              <button class="skill-node node-5" type="button" data-tilt-intensity="13">
+                <span class="skill-name">SCADA / OT</span>
+                <span class="skill-meta">Industrial Ops</span>
+              </button>
+              <button class="skill-node node-6" type="button" data-tilt-intensity="10">
+                <span class="skill-name">Flask</span>
+                <span class="skill-meta">Dashboards</span>
+              </button>
+              <button class="skill-node node-7" type="button" data-tilt-intensity="9">
+                <span class="skill-name">MySQL</span>
+                <span class="skill-meta">Data Layer</span>
+              </button>
+              <button class="skill-node node-8" type="button" data-tilt-intensity="11">
+                <span class="skill-name">AWS / Docker</span>
+                <span class="skill-meta">Deployment</span>
+              </button>
+              <button class="skill-node node-9" type="button" data-tilt-intensity="8">
+                <span class="skill-name">JavaScript</span>
+                <span class="skill-meta">Interaction</span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block reveal">
+        <div class="section-heading">
+          <p class="section-tag">WORK STYLE</p>
+          <h2>How I approach products, systems, and difficult problems.</h2>
+        </div>
+
+        <div class="value-grid">
+          <article class="panel value-card">
+            <h3>Motivation</h3>
+            <p>I keep climbing toward harder problems. I like difficult systems because they reveal who can stay calm and still build cleanly.</p>
+          </article>
+          <article class="panel value-card">
+            <h3>Interface Sense</h3>
+            <p>I like interfaces that feel active and responsive, with enough motion and detail to stay memorable without getting in the way.</p>
+          </article>
+          <article class="panel value-card">
+            <h3>Execution</h3>
+            <p>I prefer clear thinking, simple architecture where possible, and polished final output that feels ready to ship.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact-block reveal" id="contact">
+        <div class="panel contact-panel">
+          <div class="contact-copy">
+            <p class="section-tag">CONTACT SIGNAL</p>
+            <h2>Need a developer who can handle software engineering, cyber-focused thinking, and polished product work?</h2>
+            <p>
+              If the work needs backend strength, full-stack delivery, or cybersecurity context, I would be glad to talk.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <a href="mailto:abhirajraushan94@gmail.com">
+              <span>Email</span>
+              <strong>abhirajraushan94@gmail.com</strong>
+            </a>
+            <a href="tel:+919113498182">
+              <span>Phone</span>
+              <strong>+91 9113498182</strong>
+            </a>
+            <a href="https://github.com/Abhirajraushan" target="_blank" rel="noreferrer">
+              <span>GitHub</span>
+              <strong>github.com/Abhirajraushan</strong>
+            </a>
+            <a href="https://www.linkedin.com/in/abhiraj-raushan/" target="_blank" rel="noreferrer">
+              <span>LinkedIn</span>
+              <strong>linkedin.com/in/abhiraj-raushan</strong>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>ABHIRAJ RAUSHAN / SOFTWARE PORTFOLIO</p>
+      <p><span id="year"></span> / BUILT WITH HTML, CSS, AND JAVASCRIPT</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
